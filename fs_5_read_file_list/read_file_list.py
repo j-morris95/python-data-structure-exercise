@@ -7,6 +7,11 @@ def read_file_list(filename):
         Dr. Sniffle
 
     This should work:
+        >>> read_file_list("cats")
+        - Auden
+        - Ezra
+        - Fluffy
+        - Meowsley
 
         >>> read_file_list("dogs")
         - Fido
@@ -15,6 +20,9 @@ def read_file_list(filename):
 
     It will raise an error if the file cannot be found.
     """
+    with open(filename) as file:
+        for line in file:
+            print(f"- {line.strip()}")
 
     # hint: when you read lines of files, there will be a "newline"
     # (end-of-line character) at the end of each line, and you want to
